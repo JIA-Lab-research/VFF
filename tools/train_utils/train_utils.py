@@ -130,7 +130,7 @@ def checkpoint_state(model=None, optimizer=None, epoch=None, it=None):
     try:
         import pcdet
         version = 'pcdet+' + pcdet.__version__
-    except:
+    except ImportError:
         version = 'none'
 
     return {'epoch': epoch, 'it': it, 'model_state': model_state, 'optimizer_state': optim_state, 'version': version}
